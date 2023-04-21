@@ -1,0 +1,19 @@
+Seeker and employee.
+
+SOFTWARE REQUIREMENT SPECIFICATION:
+
+The PAS acts as an interface between the 'applicant' and the 'administrator'. This system tries to make the interface as simple as possible and at the same
+
+time not riskingthe security of data stored in. This minimizes the time duration in which the user receives the recruitment.
+
+• Front End Client - The applicant and Administrator online interface is built using JSP and HTML. The Administrators's local interface is built using Java.
+
+• Web Server - Glassfish application server (SQL Corporation).
+
+• Back End - SQL database.
+
+23HARDWARE INTERFACE The server is directly connected to the client systems. The client systems have accessto the database in the server.
+
+22SOFTWARE INTERFACE
+
+24 PRODUCT PERSPECTIVE
