@@ -1,0 +1,185 @@
+<html> 
+<head> 
+<title>sign_in</title>
+<style type="text/css">
+input
+{
+width:600px;
+height:35px;
+border-radius:5px;
+border:2px solid blue;
+font-size:20px;
+}
+#btn
+{
+background-color:green;
+color:white;
+font-size:20px;
+border-radius:0px 50px;
+}
+#btn:hover
+{
+background-color:blue;
+}
+span
+{
+color:red;
+font-size:20px;
+}
+
+</style> 
+</head> 
+<body> 
+<form action="signin" method="post" autocomplete="off" onsubmit="return validation()"> 
+<table cellspacing="15" align="center"> 
+<tr><td>
+<h3>username:</h3><input type="text" id="user" placeholder="user"></td></tr>
+<br><span id="userr"></span> 
+
+<tr><td> 
+<h3>password:</h3><input type="password" id="pass" placeholder="password"></td></tr> 
+<br><span id="passs"></span> 
+
+<tr><td>
+<h3>confirm password:</h3><input type="password" id="cpass" placeholder="confirm password"></td></tr> 
+<br><span id="cpasss"></span> 
+
+<tr><td>
+<h3>email:</h3><input type="email" id="email" placeholder="email"></td></tr> 
+<br><span id="emaill"></span> 
+
+
+<tr><td>
+<h3>mobile:</h3><input type="int" id="mobile" placeholder="mobile"></tr></td>
+<br><span id="mobilee"></span> 
+
+
+
+
+
+<tr><td><input type="Submit" id="btn" placeholder="">
+ </tr></td>
+</table>
+</form> 
+</body> 
+
+
+<script type="text/javascript"> 
+function validation() 
+ { 
+var user = document.getElementById("user").value; 
+var pass = document.getElementById("pass").value;
+var cpass = document.getElementById("cpass").value;
+var email = document.getElementById("email").value;
+var mobile = document.getElementById("mobile").value;
+if(user=="")
+{
+  document.getElementById("userr").innerHTML="**please write the user name**";
+return false;
+}
+if(user.length<7)
+{
+ document.getElementById("userr").innerHTML="**please write atleast 8 charecter in name**"; 
+return false;
+}
+if(!isNaN(user))
+{
+ document.getElementById("userr").innerHTML="**aplhabets only allowed**"; 
+return false;
+}
+else
+{
+document.getElementById("userr").innerHTML="";
+}
+if(pass=="")
+{
+  document.getElementById("passs").innerHTML="**please write the password**";
+return false;
+}
+if(pass.length<8)
+{
+  document.getElementById("passs").innerHTML="**please write password atleast 8 characters**";
+
+return false;
+}
+
+if(pass.search(/[0-9]/)==-1)
+{
+  document.getElementById("passs").innerHTML="**please write password atleast 1 numeric characters**";
+return false;
+}
+if(pass.search(/[a-z]/)==-1)
+{
+  document.getElementById("passs").innerHTML="**please write password atleast 1 lowercase characters**";
+return false;
+}
+if(pass.search(/[!\@\#\$\%\^\&\*\(\)\_\-\+\=\<\>\,\?]/)==-1)
+{
+  document.getElementById("passs").innerHTML="**please write password atleast 1 specialcase characters**";
+return false;
+}
+if(pass.search(/[A-Z]/)==-1)
+{
+  document.getElementById("passs").innerHTML="**please write password atleast 1 uppercase characters**";
+return false;
+}
+
+else
+{
+document.getElementById("passs").innerHTML="";
+}
+if(cpass=="")
+{
+  document.getElementById("cpasss").innerHTML="**please write the password again**";
+return false;
+}
+if(cpass!=pass)
+{
+  document.getElementById("cpasss").innerHTML="**password is not match**";
+return false;
+}
+else
+{
+document.getElementById("cpasss").innerHTML="";
+}
+if(email=="")
+{
+  document.getElementById("emaill").innerHTML="**please write the email**";
+return false;
+}
+if(email.search(/[0-9]/)==-1)
+{
+  document.getElementById("emaill").innerHTML="**please write password atleast 1 numeric characters**";
+return false;
+}
+if(email.search(/[!\@\#\$\%\^\&\*\(\)\_\-\+\=\<\>\,\?]/)==-1)
+{
+  document.getElementById("emaill").innerHTML="**please write password atleast 1 specialcase characters**";
+return false;
+}
+else
+{
+document.getElementById("emaill").innerHTML="";
+}
+if(mobile=="")
+{
+  document.getElementById("mobilee").innerHTML="**please write the mobile number**";
+return false;
+}
+if(isNaN(mobile))
+{
+document.getElementById("mobilee").innerHTML="**number only allowed**";
+return false;
+}
+if(mobile.length<10 || mobile.length>10)
+{
+ document.getElementById("mobilee").innerHTML="**please write 10 digit mobile number**"; 
+return false;
+} 
+else
+{
+document.getElementById("mobilee").innerHTML="";
+}
+}
+</script> 
+</html>

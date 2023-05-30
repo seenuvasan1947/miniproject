@@ -1,0 +1,77 @@
+<html>
+<head>
+	<script>
+		// for validation of the fileds.
+		function valid(){
+			var x= document.reg.sa.value;
+			var y = document.reg.sn.value;
+			var z = document.reg.sid.value;
+			var a = document.reg.gender.value;
+		   if (y == "") {
+			alert("Name must be filled out");
+			 return false;
+			}
+	
+			if (z == "") {
+			alert("ID must be filled out");
+			 return false;
+			}
+	
+			if (x == ""){
+			alert("Age must be filled out");
+			return false;
+			}
+			else if (x<18){
+			alert("Under age 18 is not acceptable");
+			return false;
+			}
+	
+			if (a == "") {
+			alert("Gender must be filled out");
+			 return false;
+			}
+		}
+	</script>
+</head>
+<body>
+
+<br><br>
+<form name="reg" action="save.php" onsubmit="return valid()" method="post" enctype="multipart/form-data"> <!--onsubmit check the validation & enctype uses 
+	for file/photo upload option-->
+Student ID: <input type="text" name="sid"><br><br>
+Student Name: <input type="text" name="sn"><br><br>
+Student Age: <input type="number" name="sa"><br><br>
+Gender:<br>
+<input type="radio" name="gender" value="male">Male<br>
+<input type="radio" name="gender" value="female">Female<br>
+
+<br>
+State:
+<select name="state">
+	<option value="Tamilnadu">Tamilnadu</option>	
+<option value="Kerala">Kerala</option>
+<option value="Goa">Goa</option>
+<option value="Karnataka">Karnataka</option>
+</select>
+<br><br>
+<br>
+District:
+<select name="District">
+	<option value="Villupuram">Villupuram</option>	
+<option value="Kallakurichi">Kallakurichi</option>
+<option value="Cuddalore">Cuddalore</option>
+
+</select>
+<br><br>
+Submit your photo:  <input type="file" name="fileToUpload" id="fileToUpload">  <!--for the field of photo upload-->
+<br><br>
+
+<br><br>
+
+<input type="submit" name="sb" value="submit"><br>
+</form>
+
+
+</body>
+
+</html>
